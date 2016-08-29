@@ -12,6 +12,33 @@ require 'rspec/rails'
 #
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+require 'capybara/rails'
+require 'vcr'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+end
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+  provider: 'github',
+  extra: {
+    raw_info: {
+      uid: "1",
+      name: "Jenny",
+      avatar_url: "avatar.jiff",
+      login: "MsJennyGiraffe",
+      email: "test@test.com",
+    }
+  },
+  credentials: {
+    token: "tolken",
+    secret: "secrettolken"
+  }
+})
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|

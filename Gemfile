@@ -10,6 +10,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'capybara'
+gem 'omniauth-github'
+gem 'vcr'
+gem 'webmock'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -21,6 +24,7 @@ gem 'capybara'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov'
 end
 
 group :development do
