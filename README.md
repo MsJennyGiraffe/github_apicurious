@@ -1,24 +1,29 @@
-# README
+# APICurious
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project uses Rails 5(5.0.0.1)
 
-Things you may want to cover:
+clone:
 
-* Ruby version
+```
+git@github.com:MsJennyGiraffe/github_apicurious.git
+```
 
-* System dependencies
+To run project:
 
-* Configuration
+```
+bundlle
+```
 
-* Database creation
+```
+rails db:setup
+```
 
-* Database initialization
+```
+rails s
+```
 
-* How to run the test suite
+visit
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+localhost:3000
+```
