@@ -8,7 +8,7 @@ RSpec.feature "user can access followers" do
       click_link "Your profile"
 
       expect(page).to have_content("Followers")
-      click_link("22")
+      click_link("21")
 
       expect(current_path).to eq(followers_path)
       expect(page).to have_content("Josh Washke")
