@@ -4,7 +4,12 @@ class GithubService
   end
 
   def get_followers(username)
-    response = conn.get("users/MsJennyGiraffe/followers")
+    response = conn.get("users/#{username}/followers")
+    JSON.parse(response.body)
+  end
+
+  def get_name(username)
+    response = conn.get("users/#{username}")
     JSON.parse(response.body)
   end
 
