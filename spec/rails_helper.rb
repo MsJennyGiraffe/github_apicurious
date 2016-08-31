@@ -5,12 +5,7 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
-# The following line is provided for convenience purposes. It has the downside
-# of increasing the boot-up time by auto-requiring all files in the support
-# directory. Alternatively, in the individual `*_spec.rb` files, manually
-# require only the support files necessary.
-#
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 require 'capybara/rails'
 require 'vcr'
@@ -28,7 +23,7 @@ OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
     raw_info: {
       uid: "1",
       name: "Jenny",
-      avatar_url: "avatar.jiff",
+      avatar_url: "https://avatars.githubusercontent.com/u/14857182?v=3",
       login: "MsJennyGiraffe",
       email: "test@test.com",
     }
