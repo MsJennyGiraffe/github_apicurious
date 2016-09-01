@@ -1,15 +1,17 @@
 class GithubService
-  def initialize
+  def initialize(user)
+    @user = user
     @_conn = Faraday.new("https://api.github.com/")
+    @_conn.headers["Authorization"] = "Token #{@user.oauth_token}"
   end
 
-  def get_followers(username)
-    response = conn.get("users/#{username}/followers")
+  def get_followers
+    response = conn.get("user/followers")
     JSON.parse(response.body)
   end
 
-  def get_name(username)
-    response = conn.get("users/#{username}")
+  def get_followings
+    response = conn.get("user/following")
     JSON.parse(response.body)
   end
 

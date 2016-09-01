@@ -1,3 +1,4 @@
 <%= @user.username %>
 <%= @user.avatar %>
 Followers: <%= link_to @followers.count, user_followers_path(@user) %>
+Followings: <%= link_to @followings.count, user_followings_path(@user) %>

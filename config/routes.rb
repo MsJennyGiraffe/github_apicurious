@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :followers, only: [:index]
+    resources :followings, only: [:index]
   end
 
 

@@ -29,8 +29,8 @@ OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
     }
   },
   credentials: {
-    token: "tolken",
-    secret: "secrettolken"
+    token: ENV["GITHUB_TOKEN"],
+    secret: ENV["GITHUB_TOKEN"]
   }
 })
 
