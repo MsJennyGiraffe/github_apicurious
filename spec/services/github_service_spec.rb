@@ -43,4 +43,22 @@ describe GithubService do
       end
     end
   end
+
+  context "starred_repos" do
+    it "returns a list of repos that the user has starred" do
+      VCR.use_cassette("starred") do
+        user = User.create(
+          uid: 1,
+          name: "Jenny",
+          username: "MsJennyGiraffe",
+          oauth_token: ENV['GITHUB_TOKEN'],
+          avatar: "avatar",
+          email: "test@example.com"
+        )
+
+        starred_repos = GithubService.new(user).get_starred_repos
+        expect(starred_repos.count).to eq(1)
+      end
+    end
+  end
 end
