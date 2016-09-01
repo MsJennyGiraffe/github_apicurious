@@ -1,4 +1,4 @@
-class Follower
+class Following
   attr_reader :username, :avatar, :github_url
 
   def initialize(login, avatar, github_url)
@@ -12,12 +12,12 @@ class Follower
   end
 
   def self.all(user)
-    followers = service(user).get_followers
-    followers.map do |follower|
-      Follower.new(
-        follower["login"],
-        follower["avatar_url"],
-        follower["html_url"],
+    followings = service(user).get_followings
+    followings.map do |following|
+      Following.new(
+        following["login"],
+        following["avatar_url"],
+        following["html_url"],
       )
     end
   end
