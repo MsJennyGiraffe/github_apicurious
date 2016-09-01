@@ -61,4 +61,26 @@ describe GithubService do
       end
     end
   end
+
+  context "popular_repositories" do
+    it "returns a list of popular_repositories" do
+      VCR.use_cassette("popular") do
+        user = User.create(
+          uid: 1,
+          name: "Jenny",
+          username: "MsJennyGiraffe",
+          oauth_token: ENV['GITHUB_TOKEN'],
+          avatar: "avatar",
+          email: "test@example.com"
+        )
+
+        popular_repositories = GithubService.new(user).get_popular_repositories
+        repo = popular_repositories.first
+        expect(popular_repositories.count).to eq(5)
+        expect(repo["name"].class).to eq(String)
+        expect(repo.has_key?("html_url")).to be_truthy
+        expect(repo.has_key?("stargazers_count")).to be_truthy
+      end
+    end
+  end
 end

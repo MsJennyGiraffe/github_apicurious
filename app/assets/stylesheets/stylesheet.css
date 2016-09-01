@@ -27,3 +27,17 @@ img.nav-resize {
 a.coloring {
   color: black;
 }
+
+.repos {
+  border: 1px solid #b7b7b7;
+  padding: 10px;
+  margin: 0px;
+}
+
+.repo-header {
+  background: #b7b7b7;
+  border-radius: 5px 5px 0px 0px;
+  border: 1px solid #b7b7b7;
+  padding: 10px;
+  margin: 0px;
+}

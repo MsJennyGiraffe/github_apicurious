@@ -4,5 +4,6 @@ class UsersController < ApplicationController
     @followers = Follower.all(@user)
     @followings = Following.all(@user)
     @starred_count = GithubService.new(@user).get_starred_repos.count
+    @popular_repositories = PopularRepository.top_five(@user)
   end
 end
