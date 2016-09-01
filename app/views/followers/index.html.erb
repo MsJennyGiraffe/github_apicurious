@@ -2,12 +2,12 @@
 <div class="col-md-10 col-md-offset-1">
 
   <% @followers.each do |follower| %>
-  <div class="col-md-4">
-    <div class="col-md-7">
-      <%= image_tag follower.avatar, class: "resize-image" %>
+  <div class="col-md-4 followers">
+    <div class="col-md-4">
+      <%= image_tag follower.avatar, class: "resize-image img-rounded" %>
     </div>
-    <div class="col-md-5">
-      <h5 class="text-center"> <%= link_to follower.username, follower.github_url %> </a></h5>
+    <div class="col-md-7">
+      <h4> <%= link_to follower.username, follower.github_url, class: "coloring" %></h4>
     </div>
   </div>
   <% end %>

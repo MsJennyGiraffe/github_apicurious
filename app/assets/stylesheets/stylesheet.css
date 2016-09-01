@@ -17,3 +17,13 @@ img.nav-resize {
     border-bottom: 1px solid #b7b7b7;
     margin-bottom: 20px;
 }
+
+.followers {
+    border-bottom: 1px solid #b7b7b7;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+a.coloring {
+  color: black;
+}
