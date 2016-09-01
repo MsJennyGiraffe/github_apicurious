@@ -15,6 +15,7 @@
     <% @popular_repositories.each do |repo| %>
       <h5 class="repos"><%= link_to repo.name, repo.url %><span class="pull-right"> Stars: <%= repo.stars %></span></h5>
     <% end %>
+    <%= link_to "View All Repositories", user_repositories_path(@user) %>
   </div>
 </div>
 

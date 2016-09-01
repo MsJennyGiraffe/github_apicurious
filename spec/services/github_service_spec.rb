@@ -83,4 +83,26 @@ describe GithubService do
       end
     end
   end
+
+  context "repositories" do
+    it "returns a list of repositories" do
+      VCR.use_cassette("repos") do
+        user = User.create(
+          uid: 1,
+          name: "Jenny",
+          username: "MsJennyGiraffe",
+          oauth_token: ENV['GITHUB_TOKEN'],
+          avatar: "avatar",
+          email: "test@example.com"
+        )
+
+        repositories = GithubService.new(user).get_repositories
+        repo = repositories.first
+        expect(repositories.count).to eq(30)
+        expect(repo["name"].class).to eq(String)
+        expect(repo.has_key?("html_url")).to be_truthy
+        expect(repo["owner"].has_key?("login")).to be_truthy
+      end
+    end
+  end
 end
