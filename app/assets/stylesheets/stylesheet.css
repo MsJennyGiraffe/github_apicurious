@@ -2,3 +2,18 @@ img.resize-image {
   width:75px;
   height: auto;
 }
+
+img.profile-resize {
+  width: 230px;
+  height: 230px;
+}
+
+img.nav-resize {
+  width: 28px;
+  height: 28px;
+}
+
+.bottom {
+    border-bottom: 1px solid #b7b7b7;
+    margin-bottom: 20px;
+}
