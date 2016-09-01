@@ -83,4 +83,24 @@ describe GithubService do
       end
     end
   end
+
+  context "commit_history" do
+    it "returns commit history" do
+      VCR.use_cassette("commits") do
+        user = User.create(
+          uid: 1,
+          name: "Jenny",
+          username: "MsJennyGiraffe",
+          oauth_token: ENV['GITHUB_TOKEN'],
+          avatar: "avatar",
+          email: "test@example.com"
+        )
+
+        commits = GithubService.new(user).get_commit_history
+        expect(commits.first.has_key?("message")).to be_truthy
+        expect(commits.first["message"].class).to eq(String)
+        expect(commits.last["message"].class).to eq(String)
+      end
+    end
+  end
 end

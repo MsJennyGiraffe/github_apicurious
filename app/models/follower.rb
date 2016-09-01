@@ -2,8 +2,8 @@ class Follower
   attr_reader :username, :avatar, :github_url
 
   def initialize(login, avatar, github_url)
-    @username = login
-    @avatar = avatar
+    @username   = login
+    @avatar     = avatar
     @github_url = github_url
   end
 

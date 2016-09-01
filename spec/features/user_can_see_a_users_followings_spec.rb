@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "user can access followeings" do
+RSpec.feature "user can access followings" do
   scenario "a user can see a users followings" do
     VCR.use_cassette("see followings", record: :new_episodes) do
       visit root_path
