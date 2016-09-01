@@ -7,16 +7,25 @@ class GithubService
 
   def get_followers
     response = conn.get("user/followers")
-    JSON.parse(response.body)
+    parse(response.body)
   end
 
   def get_followings
     response = conn.get("user/following")
-    JSON.parse(response.body)
+    parse(response.body)
+  end
+
+  def get_starred_repos
+    response = conn.get("user/starred")
+    parse(response.body)
   end
 
   private
     def conn
       @_conn
+    end
+
+    def parse(response)
+      JSON.parse(response)
     end
 end
