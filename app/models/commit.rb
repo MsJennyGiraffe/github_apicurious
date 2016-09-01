@@ -12,8 +12,8 @@ class Commit
     commits = service(user).get_commit_history
     commits.map do |commit|
       Commit.new(
-        commit["message"],
-        commit["url"]
+        commit["payload"]["commits"]["message"],
+        commit["payload"]["commits"]["url"]
       )
     end
   end

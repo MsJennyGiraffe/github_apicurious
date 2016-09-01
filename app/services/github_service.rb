@@ -29,9 +29,8 @@ class GithubService
   def get_commit_history
     response = conn.get("users/#{@user.username}/events")
     commits = parse(response.body)
-    commits.each do |commit|
-      commits["payload"]["commits"]
-    end
+    byebug
+    commits = commits["payload"]["commits"]
   end
 
   private
