@@ -9,6 +9,13 @@
     <h5><%= @user.email %></h5>
     <% end %>
   </div>
+
+  <div class="col-md-9">
+    <h4 class="repo-header">Popular Repositories</h4>
+    <% @popular_repositories.each do |repo| %>
+      <h5 class="repos"><%= link_to repo.name, repo.url %><span class="pull-right"> Stars: <%= repo.stars %></span></h5>
+    <% end %>
+  </div>
 </div>
 
   <div class="col-md-3">

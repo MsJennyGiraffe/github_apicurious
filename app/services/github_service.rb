@@ -20,6 +20,12 @@ class GithubService
     parse(response.body)
   end
 
+  def get_popular_repositories
+    response = conn.get("search/repositories?q=user:#{@user.username}&sort=stars")
+    repos = parse(response.body)
+    repos = repos["items"][0..4]
+  end
+
   private
     def conn
       @_conn
