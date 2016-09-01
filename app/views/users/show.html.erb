@@ -1,4 +1,32 @@
-<%= @user.username %>
-<%= @user.avatar %>
-Followers: <%= link_to @followers.count, user_followers_path(@user) %>
-Followings: <%= link_to @followings.count, user_followings_path(@user) %>
+<div class="col-md-12">
+
+<div class="col-md-12">
+  <div class="col-md-3 bottom">
+    <img class="profile-resize img-rounded" src=<%= @user.avatar %>>
+    <h3><%= @user.name %></h3>
+    <h4><%= @user.username %></h4>
+    <% if @user.email %>
+    <h5><%= @user.email %></h5>
+    <% end %>
+  </div>
+</div>
+
+  <div class="col-md-3">
+    <div>
+      <a href= "<%= user_followers_path(@user) %>">
+        <button class="btn btn-primary btn-block" type="button">
+          See Followers <span class="badge"> <%= @followers.count %></span>
+        </button>
+      </a>
+    </div>
+
+    <div>
+      <a href= "<%= user_followings_path(@user) %>">
+        <button class="btn btn-info btn-block" type="button">
+          See Followings <span class="badge"> <%= @followings.count %></span>
+        </button>
+      </a>
+    </div>
+  </div>
+
+</div>
