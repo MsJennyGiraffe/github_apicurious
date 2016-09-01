@@ -13,6 +13,7 @@ gem 'capybara'
 gem 'omniauth-github'
 gem 'vcr'
 gem 'webmock'
+gem 'faker'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -25,6 +26,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development do
