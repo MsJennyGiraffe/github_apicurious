@@ -26,6 +26,6 @@ class Follower
 
   def self.get_name(follower_login)
     follower = service.get_name(follower_login)
-    follower["name"]
+    name = follower["name"]
   end
 end

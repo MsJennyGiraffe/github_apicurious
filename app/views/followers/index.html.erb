@@ -1,0 +1,15 @@
+<h1 class="text-center"><%= link_to @user.username, user_path(@user) %>'s Followers</h1>
+<div class="col-md-10 col-md-offset-1">
+
+  <% @followers.each do |follower| %>
+  <div class="col-md-4">
+    <div class="col-md-7">
+      <%= image_tag follower.avatar, class: "resize-image" %>
+    </div>
+    <div class="col-md-5">
+      <h5 class="text-center"> <%= link_to follower.username, follower.github_url %> </a></h5>
+      <h5 class="text-center"> <%= follower.name %></h5>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -28,6 +28,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development do
