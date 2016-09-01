@@ -26,6 +26,11 @@ class GithubService
     repos = repos["items"][0..4]
   end
 
+  def get_repositories
+    response = conn.get("/user/repos")
+    repos = parse(response.body)
+  end
+
   private
     def conn
       @_conn
