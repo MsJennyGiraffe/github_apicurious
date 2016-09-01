@@ -3,10 +3,10 @@
 
   <% @followings.each do |following| %>
   <div class="col-md-4 followers">
-    <div class="col-md-7">
+    <div class="col-md-4">
       <%= image_tag following.avatar, class: "resize-image img-rounded" %>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-7">
       <h4> <%= link_to following.username, following.github_url, class: "coloring" %></h4>
     </div>
   </div>
